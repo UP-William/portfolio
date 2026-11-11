@@ -511,6 +511,8 @@ kbd{
 }
 .mail:hover{border-color:var(--amber);color:var(--amber-2)}
 .contact-meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:26px;color:var(--muted);font-size:13px}
+.contact-note{margin-top:22px;font-size:12px;line-height:1.7;color:var(--muted);max-width:460px;letter-spacing:.01em}
+.contact-meta a.tel{color:var(--text);border-bottom:1px solid rgba(240,163,94,.35);padding-bottom:1px}
 .contact-actions{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap}
 .footer{border-top:1px solid var(--line-2);padding:22px var(--pad)}
 .footer-inner{

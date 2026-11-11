@@ -387,6 +387,31 @@
 
   window.addEventListener("hashchange", syncFromHash);
 
+  /* ---------------- contact reveal（打码 → 点击解码） ----------------
+     静态 HTML 里只有 ciyu****@163.com / 132****5277，
+     真实值以 base64 存在此处，页面源码与文本爬虫拿不到明文。 */
+  (function initContact() {
+    var EMAIL = atob("Y2l5dWppYWxpbkAxNjMuY29t");
+    var PHONE = atob("MTMyNzMxNjUyNzc=");
+    var btn = document.getElementById("revealContact");
+    if (!btn) return;
+    var subject = encodeURIComponent("作品集咨询 · 于佳林");
+    btn.addEventListener("click", function () {
+      var mail = document.getElementById("contactMail");
+      var tel = document.getElementById("contactPhone");
+      if (mail) mail.outerHTML = '<a class="mail" id="contactMail" href="mailto:' + EMAIL + '?subject=' + subject + '">' + EMAIL + '</a>';
+      if (tel) tel.outerHTML = '<a class="tel" id="contactPhone" href="tel:' + PHONE + '">' + PHONE + '</a>';
+      btn.outerHTML = '<a class="btn btn-solid" href="mailto:' + EMAIL + '?subject=' + subject + '">写邮件</a>'
+        + '<button class="btn btn-line" type="button" id="copyMail">复制邮箱</button>';
+      var copy = document.getElementById("copyMail");
+      if (copy) copy.addEventListener("click", function () {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(EMAIL).then(function () { copy.textContent = "已复制"; }, function () { copy.textContent = EMAIL; });
+        } else { copy.textContent = EMAIL; }
+      });
+    });
+  })();
+
   /* ---------------- init ---------------- */
   renderFilters();
   renderGrid();
