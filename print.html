@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>于佳林 · 产品设计作品集 2026（PDF 版）</title>
+<style>
+  @page{ size:A4; margin:0 }
+  *{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  html,body{margin:0;padding:0;background:#fff;color:#141310;
+    font-family:"MiSans","HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;}
+  .page{width:210mm;height:297mm;position:relative;overflow:hidden;page-break-after:always;background:#fff}
+  .page:last-child{page-break-after:auto}
+  .latin{font-family:"Helvetica Neue",Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase}
+
+  /* cover */
+  .cover{background:#0a0a0b;color:#f4f1ea}
+  .cover .bg{position:absolute;inset:0}
+  .cover .bg img{width:100%;height:100%;object-fit:cover;opacity:.5;filter:saturate(.9)}
+  .cover .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,11,.55) 0%,rgba(10,10,11,.15) 40%,rgba(10,10,11,.92) 100%)}
+  .cover .inner{position:absolute;left:18mm;right:18mm;bottom:22mm}
+  .cover .eyebrow{font-size:8.5pt;letter-spacing:.34em;color:#f0a35e;margin:0 0 8mm}
+  .cover h1{font-size:34pt;line-height:1.16;letter-spacing:-.02em;margin:0 0 6mm;font-weight:600}
+  .cover h1 em{font-style:normal;color:#f0a35e}
+  .cover .sub{font-size:10pt;line-height:1.9;color:#cfcac1;margin:0;max-width:120mm}
+  .cover .meta{position:absolute;left:18mm;right:18mm;top:18mm;display:flex;justify-content:space-between;font-size:8pt;color:#9d988f}
+  .cover .foot{position:absolute;left:18mm;right:18mm;bottom:10mm;display:flex;justify-content:space-between;font-size:7.5pt;color:#7e7a73;border-top:1px solid rgba(255,255,255,.16);padding-top:4mm}
+
+  /* about */
+  .about{padding:20mm 18mm}
+  .about .kicker{font-size:8pt;letter-spacing:.3em;color:#a8744a}
+  .about h2{font-size:24pt;line-height:1.3;margin:6mm 0 10mm;font-weight:600;letter-spacing:-.02em}
+  .about .grid{display:grid;grid-template-columns:52mm 1fr;gap:12mm}
+  .about img{width:52mm;height:69mm;object-fit:cover;object-position:50% 24%;background:#eee}
+  .about p{font-size:10pt;line-height:1.95;margin:0 0 4mm;color:#2e2b26}
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:0 8mm;margin-top:9mm;border-top:1px solid #e3ded4}
+  .facts div{padding:3mm 0;border-bottom:1px solid #ece7de;font-size:9pt;display:flex;flex-direction:column;gap:.6mm}
+  .facts dt{font-size:7.4pt;letter-spacing:.14em}
+  .facts dd{font-size:9.2pt}
+  .facts dt{color:#8a857b}
+  .facts dd{margin:0;font-weight:500}
+  .about .awards{margin-top:9mm}
+  .about .awards h3{font-size:9pt;letter-spacing:.22em;color:#8a857b;margin:0 0 4mm;font-weight:500}
+  .about .awards li{list-style:none;font-size:9pt;line-height:1.7;padding:2.6mm 0;border-bottom:1px solid #ece7de;display:flex;gap:8mm}
+  .about .awards li span{color:#a8744a;flex:0 0 16mm}
+  .about .skills{display:grid;grid-template-columns:22mm 1fr;gap:1.4mm 6mm;font-size:8.8pt;margin-top:8mm;border-top:1px solid #e3ded4;padding-top:5mm}
+
+  /* work */
+  .work .hero{height:104mm;position:relative;background:#0a0a0b}
+  .work .hero img{width:100%;height:100%;object-fit:cover}
+  .work .hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:46%;background:linear-gradient(to top,rgba(0,0,0,.72),rgba(0,0,0,0))}
+  .work .hero .no{position:absolute;left:18mm;bottom:9mm;z-index:2;font-family:"Helvetica Neue",Arial;font-size:38pt;font-weight:300;color:#fff;letter-spacing:-.03em;line-height:1;padding:2mm 5mm 3mm;border-radius:2.5mm;background:rgba(0,0,0,.46);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);box-shadow:0 2mm 6mm rgba(0,0,0,.22)}
+  .work .body{padding:10mm 18mm 0}
+  .work .kicker{display:flex;justify-content:space-between;font-size:8pt;letter-spacing:.24em;color:#a8744a}
+  .work h2{font-size:21pt;line-height:1.25;margin:3.5mm 0 1mm;font-weight:600;letter-spacing:-.015em}
+  .work .en{font-size:7.6pt;color:#9b968c;margin:0 0 5mm}
+  .work .sum{font-size:9.6pt;line-height:1.9;color:#3a3631;margin:0 0 6mm;padding-left:5mm;border-left:2px solid #f0a35e}
+  .work .cols{display:grid;grid-template-columns:1fr 1fr;gap:5mm 10mm}
+  .work .cols h3{font-size:8.6pt;margin:0 0 1.6mm;color:#141310;font-weight:600}
+  .work .cols h3 i{font-style:normal;color:#f0a35e;font-family:"Helvetica Neue",Arial;margin-right:2mm;font-weight:400}
+  .work .cols p{font-size:8.4pt;line-height:1.85;color:#4a463f;margin:0}
+  .work .thumbs{position:absolute;left:18mm;right:18mm;bottom:14mm;display:grid;grid-template-columns:repeat(3,1fr);gap:4mm}
+  .work .thumbs img{width:100%;height:38mm;object-fit:cover;background:#f2efe8}
+  .work .foot{position:absolute;left:18mm;right:18mm;bottom:6mm;display:flex;justify-content:space-between;align-items:center;font-size:7.4pt;color:#8a857b;border-top:1px solid #e8e3d9;padding-top:2.6mm}
+  .work .tagrow{display:flex;gap:2mm;flex-wrap:wrap}
+  .work .tagrow span{border:1px solid #ddd7cb;border-radius:99px;padding:1mm 3mm;font-size:7pt;color:#6b665e}
+  .work .award{color:#a8744a;font-weight:600}
+  .work .last{position:absolute;left:18mm;right:18mm;bottom:36mm;font-size:9pt;color:#3a3631;line-height:1.8}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script src="assets/js/data.js"></script>
+<script>
+(function(){
+  var app = document.getElementById("app");
+  var cover = WORKS[0], hero = WORKS[1];
+  var h = "";
+
+  h += '<section class="page cover">'
+    + '<div class="bg"><img src="' + cover.cover + '" alt=""></div><div class="shade"></div>'
+    + '<div class="meta"><span class="latin">PORTFOLIO 2026</span><span class="latin">PRODUCT DESIGN</span></div>'
+    + '<div class="inner">'
+    + '<p class="eyebrow latin">' + PROFILE.name + ' · ' + PROFILE.en + '</p>'
+    + '<h1>把光与文化，<br>做成日常里<em>愿意靠近</em>的东西。</h1>'
+    + '<p class="sub">智能灯具 / 文化创意 / 家具与空间 / 视觉与交互 —— 12 件作品。<br>'
+    + PROFILE.school + ' · ' + PROFILE.major + ' · ' + PROFILE.classOf + '</p>'
+    + '<p class="sub" style="margin-top:2mm;color:#a9a49b">' + PROFILE.email + '　·　' + PROFILE.phone + '　·　' + PROFILE.city + '</p>'
+    + '</div>'
+    + '<div class="foot"><span class="latin">SELECTED WORKS 2021—2026</span><span class="latin">' + WORKS.length + ' PROJECTS</span></div>'
+    + '</section>';
+
+  h += '<section class="page about">'
+    + '<p class="kicker latin">03 / About</p>'
+    + '<h2>在传统与新技术之间，<br>找一种温和的表达。</h2>'
+    + '<div class="grid">'
+    + '<div><img src="assets/img/portrait.webp" alt="于佳林"></div>'
+    + '<div>'
+    + '<p>我是于佳林，河北石家庄人，福建农林大学产品设计专业 2026 届。我的作品大多从「人」开始：独居的老人、放学的孩子、回到家的三代人。</p>'
+    + '<p>我喜欢把文化里的旧东西拆开，再用新的材料与交互重新装回去——三星堆的纹饰可以变成一盏儿童灯，福州的三条簪可以变成一枚书签。技术是手段，让人愿意靠近才是目的。</p>'
+    + '<div class="skills">'
+    + '<span>建模</span><span>Rhino · 3ds Max · AutoCAD</span>'
+    + '<span>渲染</span><span>KeyShot · V-Ray</span>'
+    + '<span>平面</span><span>Photoshop · Illustrator · 马克笔手绘</span>'
+    + '<span>交互</span><span>Figma · 即时设计 · 可点击原型</span>'
+    + '<span>其他</span><span>Midjourney · 计算机二级 MS Office</span>'
+    + '</div>'
+    + '</div></div>'
+    + '<div class="facts">'
+    + '<div><dt>院校</dt><dd>' + PROFILE.school + '</dd></div>'
+    + '<div><dt>专业</dt><dd>' + PROFILE.major + ' · ' + PROFILE.classOf + '</dd></div>'
+    + '<div><dt>绩点</dt><dd>' + PROFILE.gpa + '</dd></div>'
+    + '<div><dt>所在地</dt><dd>' + PROFILE.city + '</dd></div>'
+    + '<div><dt>邮箱</dt><dd>' + PROFILE.email + '</dd></div>'
+    + '<div><dt>电话</dt><dd>' + PROFILE.phone + '</dd></div>'
+    + '</div>'
+    + '<div class="awards"><h3 class="latin">Awards</h3><ul style="margin:0;padding:0">'
+    + '<li><span>2026</span>东方设计奖 · 全国高校创新设计大赛 全国决赛三等奖（独立）｜青芒</li>'
+    + '<li><span>2024</span>全国高校数字艺术大赛 三等奖（第二作者）</li>'
+    + '<li><span>2023</span>第 12 届全国海洋文化创意设计大赛 佳作奖（独立）｜消除</li>'
+    + '<li><span>2023–24</span>国家励志奖学金 · 校三好学生</li>'
+    + '<li><span>2022–23</span>国家励志奖学金 · 校社会工作先进个人</li>'
+    + '</ul></div>'
+    + '</section>';
+
+  WORKS.forEach(function(w, i){
+    var secs = w.sections.slice(0, 4);
+    var thumbs = w.gallery.slice(0, 3);
+    h += '<section class="page work">'
+      + '<div class="hero"><img src="' + w.cover + '" alt=""><div class="no">' + w.no + '</div></div>'
+      + '<div class="body">'
+      + '<div class="kicker"><span class="latin">' + w.no + ' / ' + WORKS.length + '　' + w.en + '</span><span>' + w.catLabel + ' · ' + w.year + '</span></div>'
+      + '<h2>' + w.title + '</h2>'
+      + '<p class="en latin">' + (w.award ? w.award : w.role) + '</p>'
+      + '<p class="sum">' + w.summary + '</p>'
+      + '<div class="cols">'
+      + secs.map(function(s, k){
+          return '<div><h3><i>0' + (k + 1) + '</i>' + s.h + '</h3><p>' + s.p + '</p></div>';
+        }).join("")
+      + '</div>'
+      + '</div>'
+      + '<div class="thumbs">' + thumbs.map(function(g){ return '<img src="' + g.src + '" alt="">'; }).join("") + '</div>'
+      + '<div class="foot"><div class="tagrow">' + w.tags.map(function(t){ return '<span>' + t + '</span>'; }).join("") + '</div>'
+      + '<div>' + (w.award ? '<span class="award">' + w.award + '</span>　' : '') + PROFILE.name + ' · ' + PROFILE.classOf + '</div></div>'
+      + '</section>';
+  });
+
+  h += '<section class="page cover" style="page-break-after:auto">'
+    + '<div class="bg"><img src="' + hero.cover + '" alt=""></div><div class="shade"></div>'
+    + '<div class="inner"><p class="eyebrow latin">THANKS FOR READING</p>'
+    + '<h1 style="font-size:26pt">如果你在找一名<br>愿意把细节做到底的设计师。</h1>'
+    + '<p class="sub">' + PROFILE.email + '　|　' + PROFILE.phone + '　|　' + PROFILE.city + '<br>网站版作品集：把网址写在简历这一行</p></div>'
+    + '<div class="foot"><span class="latin">' + PROFILE.name + ' · ' + PROFILE.en + '</span><span class="latin">PORTFOLIO 2026</span></div>'
+    + '</section>';
+
+  app.innerHTML = h;
+})();
+</script>
+</body>
+</html>
