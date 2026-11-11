@@ -489,8 +489,7 @@ const PROFILE = {
   classOf: "2026 届",
   gpa: "3.5 / 4",
   city: "河北石家庄",
-  // 联系方式在网页上只显示打码版本，避免被爬虫抓取；
-  // 需要生成带真实联系方式的 PDF 时，用 assets/js/contact.local.js 覆盖（该文件不部署）。
-  email: "ciyu****@163.com",
-  phone: "132****5277"
+  // 联系方式只保留邮箱（网页打码显示）；手机号已按要求从站点与 PDF 中移除。
+  // 生成带真实邮箱的 PDF 时，用 assets/js/contact.local.js 覆盖（该文件不部署）。
+  email: "ciyu****@163.com"
 };
